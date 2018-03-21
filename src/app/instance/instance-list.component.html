@@ -1,0 +1,30 @@
+<div class="instance-list-container mat-elevation-z8">
+  <cdk-table #table [dataSource]="instanceDataSource" class="instance-list-table">
+    <ng-container cdkColumnDef="number">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Number </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.number}} </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="u_instance_name">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Instanz </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.u_instance_name}} </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="sys_updated_on">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Update </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.sys_updated_on | date : 'dd.MM.yyyy'}} </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="sys_updated_by">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Updated by </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.sys_updated_by}} </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="u_used_for">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Plattform </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.u_used_for}} </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="u_is_private">
+      <cdk-header-cell *cdkHeaderCellDef class="instance-list-header-cell"> Private </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="instance-list-cell"> {{row.u_is_private}} </cdk-cell>
+    </ng-container>
+    <cdk-header-row *cdkHeaderRowDef="displayedColumns" class="instance-list-header-row"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: displayedColumns;" class="instance-list-row" (click)="selectRow(row)"></cdk-row>
+  </cdk-table>
+</div>

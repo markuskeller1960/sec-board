@@ -1,0 +1,35 @@
+.instance-list-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+/*
+ * Needed to make cdk-table match the material design spec
+ * https://material.io/guidelines/components/data-tables.html
+ */
+.instance-list-table {
+  flex: 1 1 auto;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.instance-list-header-row, .instance-list-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  height: 32px;
+  padding: 0 8px;
+}
+
+.instance-list-cell, .instance-list-header-cell {
+  flex: 1;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.instance-list-header-cell {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
